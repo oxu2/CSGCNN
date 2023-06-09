@@ -1,0 +1,82 @@
+
+====================================================================================================
+2023-06-05 03:52:02
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = mnist
+    depth = 152
+    gpu_ids = [1]
+    batch_size = 32
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0
+    ifmask = True
+    optim = adam
+    lr = 1e-05
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+
+STD path learnable layers:
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+CSG path learnable layers:
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+all layers:
+layer number = 11
+0 conv1
+1 bn1
+2 relu
+3 maxpool
+4 layer1
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+Epoch   0/150 | Traceback (most recent call last):
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 375, in <module>
+    model,cost_time,best_acc,best_train_acc = train_model(model=model,
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 171, in train_model
+    outputs = model(inputs)
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/resnet_std.py", line 188, in forward
+    x = self.conv1(x)
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 3, 7, 7], expected input[32, 1, 28, 28] to have 3 channels, but got 1 channels instead
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset mnist --depth 152 --ifmask True --gpu-ids 1 --optim adam --batch_size 32 --epoch 150 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0 --lr 1e-5 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/log

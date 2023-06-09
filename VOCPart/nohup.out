@@ -1,0 +1,238 @@
+
+====================================================================================================
+2023-06-05 03:27:19
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-10
+    depth = 152
+    gpu_ids = [0]
+    batch_size = 32
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0
+    ifmask = True
+    optim = adam
+    lr = 1e-05
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+
+STD path learnable layers:
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+CSG path learnable layers:
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+all layers:
+layer number = 11
+0 conv1
+1 bn1
+2 relu
+3 maxpool
+4 layer1
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+Already exist and will continue training
+loaded /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/checkpoints/last.pt
+Epoch 124/150 | train  1m 7s Acc:0.9732 Loss:0.0025 LMain:0.0000 LossReg:0.0000 |   val  1m12s Acc:0.8337 Loss:0.0239 MaskDens:0.1959 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 125/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 5s Acc:0.8346 Loss:0.0236 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 126/150 | train  1m 3s Acc:0.9706 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  1m 9s Acc:0.8318 Loss:0.0250 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 127/150 | train  1m 6s Acc:0.9716 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  1m11s Acc:0.8321 Loss:0.0251 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 128/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 6s Acc:0.8283 Loss:0.0286 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 129/150 | train  1m 5s Acc:0.9724 Loss:0.0025 LMain:0.0000 LossReg:0.0000 |   val  1m11s Acc:0.8313 Loss:0.0258 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 130/150 | train  1m 5s Acc:0.9721 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8320 Loss:0.0237 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 131/150 | Traceback (most recent call last):
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 375, in <module>
+    model,cost_time,best_acc,best_train_acc = train_model(model=model,
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 187, in train_model
+    running_loss += loss.item()
+KeyboardInterrupt
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset cifar-10 --depth 152 --ifmask True --gpu-ids 0 --optim adam --batch_size 32 --epoch 150 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0 --lr 1e-5 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/log
+Traceback (most recent call last):
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/run.py", line 99, in <module>
+    subprocess.run(['bash', '-c', cmd])
+  File "/usr/local/anaconda3/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/local/anaconda3/lib/python3.9/subprocess.py", line 1126, in communicate
+    self.wait()
+  File "/usr/local/anaconda3/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/local/anaconda3/lib/python3.9/subprocess.py", line 1917, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/local/anaconda3/lib/python3.9/subprocess.py", line 1875, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
+
+====================================================================================================
+2023-06-05 03:36:42
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = mnist
+    depth = 1
+    gpu_ids = [0]
+    batch_size = 128
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_28x28_pretrained/res1_bs128_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0
+    ifmask = True
+    optim = adam
+    lr = 1e-05
+    lr_reg = 0.001
+    img_size = 28
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw/train-images-idx3-ubyte.gz
+  0%|          | 0/9912422 [00:00<?, ?it/s] 92%|█████████▏| 9109504/9912422 [00:00<00:00, 90956987.97it/s]100%|██████████| 9912422/9912422 [00:00<00:00, 92522674.05it/s]
+Extracting /people/cs/o/oxx220000/data/MNIST/MNIST/raw/train-images-idx3-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw/train-labels-idx1-ubyte.gz
+  0%|          | 0/28881 [00:00<?, ?it/s]100%|██████████| 28881/28881 [00:00<00:00, 228127483.66it/s]
+Extracting /people/cs/o/oxx220000/data/MNIST/MNIST/raw/train-labels-idx1-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw/t10k-images-idx3-ubyte.gz
+  0%|          | 0/1648877 [00:00<?, ?it/s]100%|██████████| 1648877/1648877 [00:00<00:00, 45205745.56it/s]
+Extracting /people/cs/o/oxx220000/data/MNIST/MNIST/raw/t10k-images-idx3-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw/t10k-labels-idx1-ubyte.gz
+  0%|          | 0/4542 [00:00<?, ?it/s]100%|██████████| 4542/4542 [00:00<00:00, 49099300.95it/s]
+Traceback (most recent call last):
+Extracting /people/cs/o/oxx220000/data/MNIST/MNIST/raw/t10k-labels-idx1-ubyte.gz to /people/cs/o/oxx220000/data/MNIST/MNIST/raw
+
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 317, in <module>
+    assert args.img_size == 128, 'only supports --img_size 128'
+AssertionError: only supports --img_size 128
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset mnist --depth 1 --ifmask True --gpu-ids 0 --optim adam --batch_size 128 --epoch 150 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_28x28_pretrained/res1_bs128_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0 --lr 1e-5 --img_size 28 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/MNIST_28x28_pretrained/res1_bs128_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/log
+
+====================================================================================================
+2023-06-05 03:41:29
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-10
+    depth = 152
+    gpu_ids = [0]
+    batch_size = 32
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0
+    ifmask = True
+    optim = adam
+    lr = 1e-05
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+
+STD path learnable layers:
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+CSG path learnable layers:
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+all layers:
+layer number = 11
+0 conv1
+1 bn1
+2 relu
+3 maxpool
+4 layer1
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+Already exist and will continue training
+loaded /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/checkpoints/last.pt
+Epoch 131/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 5s Acc:0.8336 Loss:0.0233 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 132/150 | train  1m 5s Acc:0.9710 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8320 Loss:0.0235 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 133/150 | train  1m 4s Acc:0.9942 Loss:0.0007 LMain:0.0000 LossReg:0.0000 |   val  1m 9s Acc:0.8346 Loss:0.0285 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 134/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 6s Acc:0.8363 Loss:0.0276 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 135/150 | train  1m 5s Acc:0.9705 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8299 Loss:0.0289 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 136/150 | train  1m 5s Acc:0.9944 Loss:0.0006 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8305 Loss:0.0312 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 137/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 5s Acc:0.8276 Loss:0.0324 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 138/150 | train  1m 4s Acc:0.9713 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  1m 9s Acc:0.8345 Loss:0.0263 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 139/150 | train  1m 4s Acc:0.9735 Loss:0.0024 LMain:0.0000 LossReg:0.0000 |   val  1m 9s Acc:0.8345 Loss:0.0247 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 140/150 | train  1m 0s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 6s Acc:0.8379 Loss:0.0242 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 141/150 | train  1m 5s Acc:0.9747 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8361 Loss:0.0242 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 142/150 | train  1m 4s Acc:0.9718 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8319 Loss:0.0256 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 143/150 | train  1m 1s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 6s Acc:0.8318 Loss:0.0241 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 144/150 | train  1m 5s Acc:0.9770 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  1m11s Acc:0.8358 Loss:0.0239 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 145/150 | train  1m 5s Acc:0.9722 Loss:0.0025 LMain:0.0000 LossReg:0.0000 |   val  1m11s Acc:0.8366 Loss:0.0249 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 146/150 | train  1m 2s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 8s Acc:0.8362 Loss:0.0249 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 147/150 | train  1m 5s Acc:0.9797 Loss:0.0019 LMain:0.0000 LossReg:0.0000 |   val  1m10s Acc:0.8368 Loss:0.0256 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 148/150 | train  1m 5s Acc:0.9729 Loss:0.0025 LMain:0.0000 LossReg:0.0000 |   val  1m11s Acc:0.8393 Loss:0.0233 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 149/150 | train  1m 1s Acc:1.0000 Loss:0.0000 LMain:0.0000 LossReg:0.0000 |   val  1m 7s Acc:0.8362 Loss:0.0239 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Epoch 150/150 | train  1m 6s Acc:0.9818 Loss:0.0017 LMain:0.0000 LossReg:0.0000 |   val  1m12s Acc:0.8391 Loss:0.0269 MaskDens:0.1960 | Best epoch:115 train_acc:1.0000 val_acc:0.8443  
+Training complete in 0h23m18s
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset cifar-10 --depth 152 --ifmask True --gpu-ids 0 --optim adam --batch_size 32 --epoch 150 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0 --lr 1e-5 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/log

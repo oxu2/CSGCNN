@@ -1,7 +1,7 @@
 # -------------------------------------------------------------
 # experiment settings:
 
-gpu_ids = '0'
+gpu_ids = '1'
 ifmask = True
 train = True
 
@@ -12,7 +12,12 @@ repeat_times = 1 # how much times repeat it
 cudnn_behavoir = 'slow' # 'benchmark' 'normal' 'slow' 'none'
 
 # model and dataset
-datasets = ['VOCpart']
+# datasets = ['cifar-10']
+# img_size = 128
+# depth = 152
+# batchsize = 32
+
+datasets = ['cifar-100']
 img_size = 128
 depth = 152
 batchsize = 32
@@ -34,7 +39,7 @@ frozen = True
 import os, subprocess
 here = os.path.dirname(os.path.realpath(__file__))  # get absoltae path to the dir this file is in
 
-exp_dir_root = os.path.join(here, '..', '__result__', f'VOCPart_{img_size}x{img_size}_pretrained' )
+exp_dir_root = os.path.join(here, '..', '__result__', f'CIFAR100_{img_size}x{img_size}_pretrained' )
 
 if train:
     load_checkpoint = ''
