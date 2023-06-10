@@ -48,7 +48,7 @@ class BasicBlock(nn.Module):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
-
+        # lmask, label enumerate part
         out = self.conv2(out)
         out = self.bn2(out)
 
@@ -197,16 +197,21 @@ class ResNet(nn.Module):
 
     def forward(self, x, labels=None):
         x = self.conv1(x)
+        
         x = self.bn1(x)
+        
         x = self.relu(x)
         x = self.maxpool(x)
 
         x = self.layer1(x)
+        # lmask
         x = self.layer2(x)
+        # lmask
         x = self.layer3(x)
+        # lmask
         x = self.layer4(x)
 
-
+        # here is about the last layer, layer4
         if labels is not None:
             x, reg = self.lmask(x, labels)
 
