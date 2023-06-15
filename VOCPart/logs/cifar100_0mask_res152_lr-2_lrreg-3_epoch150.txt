@@ -1,0 +1,37 @@
+
+====================================================================================================
+2023-06-15 11:53:44
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-100
+    depth = 152
+    gpu_ids = [3]
+    batch_size = 32
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res152_bs32_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_cudnn-slow/seed12/STD/run0
+    ifmask = False
+    optim = adam
+    lr = 0.01
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = False
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch   0/150 | train  1m17s Acc:0.0257 Loss:0.1420 |   val  1m23s Acc:0.0442 Loss:0.1309 | Best epoch:0   train_acc:0.0257 val_acc:0.0442  
+Epoch   1/150 | train  1m16s Acc:0.0583 Loss:0.1272 |   val  1m22s Acc:0.0702 Loss:0.1335 | Best epoch:1   train_acc:0.0583 val_acc:0.0702  
+Epoch   2/150 | train  1m17s Acc:0.0758 Loss:0.1238 |   val  1m23s Acc:0.0913 Loss:0.1355 | Best epoch:2   train_acc:0.0758 val_acc:0.0913  
+Epoch   3/150 | 

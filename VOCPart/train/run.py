@@ -1,7 +1,7 @@
 # -------------------------------------------------------------
 # experiment settings:
 
-gpu_ids = '0'
+gpu_ids = '3'
 ifmask = 0
 train = True
 
@@ -15,8 +15,8 @@ cudnn_behavoir = 'slow' # 'benchmark' 'normal' 'slow' 'none'
 # datasets = ['mnist']
 datasets = ['cifar-100']
 img_size = 128
-depth = 50
-batchsize = 64
+depth = 152
+batchsize = 32
 
 epoch = 150
 optim = 'adam'
