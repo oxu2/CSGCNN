@@ -1,5 +1,5 @@
 # %%
-
+from torch.utils.tensorboard import SummaryWriter
 cam_top_rate = 0.3 # 0.3
 cam_UoI_threshold = 0.3
 

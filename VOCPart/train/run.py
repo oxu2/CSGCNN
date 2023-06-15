@@ -1,8 +1,8 @@
 # -------------------------------------------------------------
 # experiment settings:
 
-gpu_ids = '1'
-ifmask = True
+gpu_ids = '0'
+ifmask = 0
 train = True
 
 # -------------------------------------------------------------
@@ -12,20 +12,15 @@ repeat_times = 1 # how much times repeat it
 cudnn_behavoir = 'slow' # 'benchmark' 'normal' 'slow' 'none'
 
 # model and dataset
-# datasets = ['cifar-10']
-# img_size = 128
-# depth = 152
-# batchsize = 32
-
+# datasets = ['mnist']
 datasets = ['cifar-100']
 img_size = 128
-depth = 152
-batchsize = 32
+depth = 50
+batchsize = 64
 
-# training
 epoch = 150
 optim = 'adam'
-lr = '1e-5' # finetune resnet152: 1e-5
+lr = '1e-2' # finetune resnet152: 1e-5
 lr_reg = '1e-3'
 lambda_reg = '1e-3' # reg. coef.
 warmup_epochs = 10
@@ -33,7 +28,25 @@ layers_learnable = 5
 layers_learnable_reg = 4
 mask_period = 3
 mask_epoch_min = 2
-frozen = True
+frozen = False
+
+# datasets = ['cifar-100']
+# img_size = 128
+# depth = 152
+# batchsize = 32
+
+# # training
+# epoch = 150
+# optim = 'adam'
+# lr = '1e-5' # finetune resnet152: 1e-5
+# lr_reg = '1e-3'
+# lambda_reg = '1e-3' # reg. coef.
+# warmup_epochs = 10
+# layers_learnable = 5
+# layers_learnable_reg = 4
+# mask_period = 3
+# mask_epoch_min = 2
+# frozen = True
 
 # -------------------------------------------------------------
 import os, subprocess

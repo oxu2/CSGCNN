@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+
+====================================================================================================
+2023-06-15 04:15:08
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-10
+    depth = 50
+    gpu_ids = [2]
+    batch_size = 64
+    epoch = 150
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0
+    ifmask = True
+    optim = adam
+    lr = 0.01
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+
+STD path learnable layers:
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+CSG path learnable layers:
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+all layers:
+layer number = 11
+0 conv1
+1 bn1
+2 relu
+3 maxpool
+4 layer1
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+10 lmask
+
+Already exist and will continue training
+loaded /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/checkpoints/last.pt
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 375, in <module>
+    model,cost_time,best_acc,best_train_acc = train_model(model=model,
+  File "/people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py", line 115, in train_model
+    model.load_state_dict(checkpoint['model_state_dict'], strict=False )
+  File "/people/cs/o/oxx220000/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 2041, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for DataParallel:
+	size mismatch for module.fc.weight: copying a param with shape torch.Size([100, 2048]) from checkpoint, the shape in current model is torch.Size([10, 2048]).
+	size mismatch for module.fc.bias: copying a param with shape torch.Size([100]) from checkpoint, the shape in current model is torch.Size([10]).
+	size mismatch for module.lmask.mask: copying a param with shape torch.Size([2048, 100]) from checkpoint, the shape in current model is torch.Size([2048, 10]).
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset cifar-10 --depth 50 --ifmask True --gpu-ids 2 --optim adam --batch_size 64 --epoch 150 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0 --lr 1e-2 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/log

@@ -1,0 +1,115 @@
+
+====================================================================================================
+2023-06-15 10:33:32
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-100
+    depth = 50
+    gpu_ids = [3]
+    batch_size = 64
+    epoch = 50
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/STD/run0
+    ifmask = False
+    optim = adam
+    lr = 0.01
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = True
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = slow
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+
+STD path learnable layers:
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+
+CSG path learnable layers:
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+
+all layers:
+layer number = 10
+0 conv1
+1 bn1
+2 relu
+3 maxpool
+4 layer1
+5 layer2
+6 layer3
+7 layer4
+8 avgpool
+9 fc
+
+Epoch   0/ 50 | train  0m17s Acc:0.0658 Loss:0.0676 |   val  0m19s Acc:0.1296 Loss:0.0564 | Best epoch:0   train_acc:0.0658 val_acc:0.1296  
+Epoch   1/ 50 | train  0m15s Acc:0.1689 Loss:0.0518 |   val  0m17s Acc:0.2140 Loss:0.0480 | Best epoch:1   train_acc:0.1689 val_acc:0.2140  
+Epoch   2/ 50 | train  0m15s Acc:0.2308 Loss:0.0467 |   val  0m17s Acc:0.2708 Loss:0.0438 | Best epoch:2   train_acc:0.2308 val_acc:0.2708  
+Epoch   3/ 50 | train  0m15s Acc:0.2781 Loss:0.0432 |   val  0m18s Acc:0.3093 Loss:0.0430 | Best epoch:3   train_acc:0.2781 val_acc:0.3093  
+Epoch   4/ 50 | train  0m15s Acc:0.3113 Loss:0.0408 |   val  0m17s Acc:0.3349 Loss:0.0433 | Best epoch:4   train_acc:0.3113 val_acc:0.3349  
+Epoch   5/ 50 | train  0m15s Acc:0.3339 Loss:0.0391 |   val  0m18s Acc:0.3574 Loss:0.0387 | Best epoch:5   train_acc:0.3339 val_acc:0.3574  
+Epoch   6/ 50 | train  0m15s Acc:0.3571 Loss:0.0377 |   val  0m18s Acc:0.3958 Loss:0.0354 | Best epoch:6   train_acc:0.3571 val_acc:0.3958  
+Epoch   7/ 50 | train  0m16s Acc:0.3771 Loss:0.0364 |   val  0m18s Acc:0.4046 Loss:0.0345 | Best epoch:7   train_acc:0.3771 val_acc:0.4046  
+Epoch   8/ 50 | train  0m16s Acc:0.3913 Loss:0.0354 |   val  0m18s Acc:0.4164 Loss:0.0341 | Best epoch:8   train_acc:0.3913 val_acc:0.4164  
+Epoch   9/ 50 | train  0m15s Acc:0.4039 Loss:0.0344 |   val  0m18s Acc:0.4198 Loss:0.0339 | Best epoch:9   train_acc:0.4039 val_acc:0.4198  
+Epoch  10/ 50 | train  0m16s Acc:0.4196 Loss:0.0336 |   val  0m18s Acc:0.4334 Loss:0.0335 | Best epoch:10  train_acc:0.4196 val_acc:0.4334  
+Epoch  11/ 50 | train  0m16s Acc:0.4320 Loss:0.0327 |   val  0m19s Acc:0.4459 Loss:0.0324 | Best epoch:11  train_acc:0.4320 val_acc:0.4459  
+Epoch  12/ 50 | train  0m17s Acc:0.4446 Loss:0.0319 |   val  0m19s Acc:0.4498 Loss:0.0342 | Best epoch:12  train_acc:0.4446 val_acc:0.4498  
+Epoch  13/ 50 | train  0m16s Acc:0.4560 Loss:0.0311 |   val  0m19s Acc:0.4770 Loss:0.0300 | Best epoch:13  train_acc:0.4560 val_acc:0.4770  
+Epoch  14/ 50 | train  0m16s Acc:0.4670 Loss:0.0304 |   val  0m18s Acc:0.4865 Loss:0.0299 | Best epoch:14  train_acc:0.4670 val_acc:0.4865  
+Epoch  15/ 50 | train  0m15s Acc:0.4727 Loss:0.0299 |   val  0m17s Acc:0.4843 Loss:0.0304 | Best epoch:14  train_acc:0.4727 val_acc:0.4865  
+Epoch  16/ 50 | train  0m16s Acc:0.4840 Loss:0.0291 |   val  0m18s Acc:0.4921 Loss:0.0297 | Best epoch:16  train_acc:0.4840 val_acc:0.4921  
+Epoch  17/ 50 | train  0m16s Acc:0.4945 Loss:0.0286 |   val  0m18s Acc:0.4867 Loss:0.0319 | Best epoch:16  train_acc:0.4945 val_acc:0.4921  
+Epoch  18/ 50 | train  0m15s Acc:0.5019 Loss:0.0282 |   val  0m18s Acc:0.4992 Loss:0.0336 | Best epoch:18  train_acc:0.5019 val_acc:0.4992  
+Epoch  19/ 50 | train  0m15s Acc:0.5089 Loss:0.0276 |   val  0m17s Acc:0.5145 Loss:0.0281 | Best epoch:19  train_acc:0.5089 val_acc:0.5145  
+Epoch  20/ 50 | train  0m15s Acc:0.5622 Loss:0.0241 |   val  0m17s Acc:0.5559 Loss:0.0257 | Best epoch:20  train_acc:0.5622 val_acc:0.5559  
+Epoch  21/ 50 | train  0m15s Acc:0.5811 Loss:0.0231 |   val  0m17s Acc:0.5588 Loss:0.0261 | Best epoch:21  train_acc:0.5811 val_acc:0.5588  
+Epoch  22/ 50 | train  0m15s Acc:0.5879 Loss:0.0226 |   val  0m18s Acc:0.5621 Loss:0.0252 | Best epoch:22  train_acc:0.5879 val_acc:0.5621  
+Epoch  23/ 50 | train  0m16s Acc:0.5945 Loss:0.0223 |   val  0m18s Acc:0.5640 Loss:0.0255 | Best epoch:23  train_acc:0.5945 val_acc:0.5640  
+Epoch  24/ 50 | train  0m16s Acc:0.5972 Loss:0.0221 |   val  0m19s Acc:0.5661 Loss:0.0251 | Best epoch:24  train_acc:0.5972 val_acc:0.5661  
+Epoch  25/ 50 | train  0m16s Acc:0.6021 Loss:0.0218 |   val  0m18s Acc:0.5643 Loss:0.0263 | Best epoch:24  train_acc:0.6021 val_acc:0.5661  
+Epoch  26/ 50 | train  0m15s Acc:0.6027 Loss:0.0216 |   val  0m17s Acc:0.5680 Loss:0.0251 | Best epoch:26  train_acc:0.6027 val_acc:0.5680  
+Epoch  27/ 50 | train  0m15s Acc:0.6075 Loss:0.0214 |   val  0m17s Acc:0.5733 Loss:0.0248 | Best epoch:27  train_acc:0.6075 val_acc:0.5733  
+Epoch  28/ 50 | train  0m16s Acc:0.6089 Loss:0.0212 |   val  0m18s Acc:0.5672 Loss:0.0267 | Best epoch:27  train_acc:0.6089 val_acc:0.5733  
+Epoch  29/ 50 | train  0m18s Acc:0.6132 Loss:0.0210 |   val  0m20s Acc:0.5720 Loss:0.0254 | Best epoch:27  train_acc:0.6132 val_acc:0.5733  
+Epoch  30/ 50 | train  0m16s Acc:0.6199 Loss:0.0207 |   val  0m19s Acc:0.5750 Loss:0.0249 | Best epoch:30  train_acc:0.6199 val_acc:0.5750  
+Epoch  31/ 50 | train  0m16s Acc:0.6231 Loss:0.0205 |   val  0m19s Acc:0.5747 Loss:0.0249 | Best epoch:30  train_acc:0.6231 val_acc:0.5750  
+Epoch  32/ 50 | train  0m18s Acc:0.6224 Loss:0.0204 |   val  0m21s Acc:0.5780 Loss:0.0246 | Best epoch:32  train_acc:0.6231 val_acc:0.5780  
+Epoch  33/ 50 | train  0m18s Acc:0.6231 Loss:0.0204 |   val  0m20s Acc:0.5774 Loss:0.0249 | Best epoch:32  train_acc:0.6231 val_acc:0.5780  
+Epoch  34/ 50 | train  0m16s Acc:0.6261 Loss:0.0203 |   val  0m18s Acc:0.5747 Loss:0.0257 | Best epoch:32  train_acc:0.6261 val_acc:0.5780  
+Epoch  35/ 50 | train  0m16s Acc:0.6249 Loss:0.0204 |   val  0m19s Acc:0.5774 Loss:0.0247 | Best epoch:32  train_acc:0.6261 val_acc:0.5780  
+Epoch  36/ 50 | train  0m16s Acc:0.6251 Loss:0.0203 |   val  0m18s Acc:0.5757 Loss:0.0247 | Best epoch:32  train_acc:0.6261 val_acc:0.5780  
+Epoch  37/ 50 | train  0m16s Acc:0.6241 Loss:0.0203 |   val  0m19s Acc:0.5802 Loss:0.0246 | Best epoch:37  train_acc:0.6261 val_acc:0.5802  
+Epoch  38/ 50 | train  0m16s Acc:0.6250 Loss:0.0202 |   val  0m18s Acc:0.5777 Loss:0.0248 | Best epoch:37  train_acc:0.6261 val_acc:0.5802  
+Epoch  39/ 50 | train  0m19s Acc:0.6260 Loss:0.0202 |   val  0m21s Acc:0.5753 Loss:0.0259 | Best epoch:37  train_acc:0.6261 val_acc:0.5802  
+Epoch  40/ 50 | train  0m17s Acc:0.6271 Loss:0.0201 |   val  0m20s Acc:0.5781 Loss:0.0246 | Best epoch:37  train_acc:0.6271 val_acc:0.5802  
+Epoch  41/ 50 | train  0m17s Acc:0.6292 Loss:0.0201 |   val  0m19s Acc:0.5750 Loss:0.0251 | Best epoch:37  train_acc:0.6292 val_acc:0.5802  
+Epoch  42/ 50 | train  0m19s Acc:0.6256 Loss:0.0202 |   val  0m21s Acc:0.5772 Loss:0.0246 | Best epoch:37  train_acc:0.6292 val_acc:0.5802  
+Epoch  43/ 50 | train  0m16s Acc:0.6268 Loss:0.0203 |   val  0m19s Acc:0.5768 Loss:0.0247 | Best epoch:37  train_acc:0.6292 val_acc:0.5802  
+Epoch  44/ 50 | train  0m17s Acc:0.6253 Loss:0.0202 |   val  0m20s Acc:0.5821 Loss:0.0246 | Best epoch:44  train_acc:0.6292 val_acc:0.5821  
+Epoch  45/ 50 | train  0m18s Acc:0.6272 Loss:0.0201 |   val  0m20s Acc:0.5769 Loss:0.0249 | Best epoch:44  train_acc:0.6292 val_acc:0.5821  
+Epoch  46/ 50 | train  0m20s Acc:0.6304 Loss:0.0200 |   val  0m23s Acc:0.5786 Loss:0.0249 | Best epoch:44  train_acc:0.6304 val_acc:0.5821  
+Epoch  47/ 50 | train  0m17s Acc:0.6277 Loss:0.0202 |   val  0m20s Acc:0.5760 Loss:0.0257 | Best epoch:44  train_acc:0.6304 val_acc:0.5821  
+Epoch  48/ 50 | train  0m16s Acc:0.6281 Loss:0.0202 |   val  0m18s Acc:0.5800 Loss:0.0251 | Best epoch:44  train_acc:0.6304 val_acc:0.5821  
+Epoch  49/ 50 | train  0m16s Acc:0.6271 Loss:0.0201 |   val  0m18s Acc:0.5784 Loss:0.0246 | Best epoch:44  train_acc:0.6304 val_acc:0.5821  
+Epoch  50/ 50 | train  0m16s Acc:0.6294 Loss:0.0201 |   val  0m19s Acc:0.5754 Loss:0.0249 | Best epoch:44  train_acc:0.6304 val_acc:0.5821  
+Training complete in 0h16m25s
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset cifar-100 --depth 50 --ifmask 0 --gpu-ids 3 --optim adam --batch_size 64 --epoch 50 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/STD/run0 --lr 1e-2 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen True --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir slow --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs64_adam_lr1e-2_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/STD/run0/log

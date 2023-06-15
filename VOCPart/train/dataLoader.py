@@ -18,7 +18,7 @@ class DataLoader():
         self.seed = seed
 
     def load_data(self, img_size=32):
-        data_dir = '~/data/CIFAR10'
+        data_dir = '~/data'
         data_transforms = {
             'train': transforms.Compose([
                 transforms.RandomCrop(32, padding=4),
@@ -52,7 +52,7 @@ class DataLoader():
                                          train=False,
                                          download=True)
         if self.dataset == 'mnist':
-            data_dir = '~/data/MNIST'
+            data_dir = '~/data'
             mnist_transforms = {
                 'train': transforms.Compose([
                     transforms.ToTensor(),

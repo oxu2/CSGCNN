@@ -81,7 +81,7 @@ class Bottleneck(nn.Module):
         self.relu = nn.ReLU(inplace=True)
         self.downsample = downsample
         self.stride = stride
-        # self._icnn_mask = LearnableMaskLayer(planes*4, 20)
+        self._icnn_mask = LearnableMaskLayer(planes*4, 20)
 
     def forward(self, x):
         residual = x
@@ -89,11 +89,11 @@ class Bottleneck(nn.Module):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
-        # out = self._icnn_mask(out, labels)
+        out = self._icnn_mask(out, labels)
         out = self.conv2(out)
         out = self.bn2(out)
         out = self.relu(out)
-
+        out = self._icnn_mask(out, labels)
         out = self.conv3(out)
         out = self.bn3(out)
 
@@ -102,7 +102,8 @@ class Bottleneck(nn.Module):
 
         out += residual
         out = self.relu(out)
-        # out = self._icnn_mask(out, labels)
+        out = self._icnn_mask(out, labels)
+
         return out
 
 class LearnableMaskLayer(nn.Module):
@@ -151,8 +152,8 @@ class LearnableMaskLayer(nn.Module):
         self.mask.data = lmask
 
     def forward(self, x, labels, last_layer_mask=None):
-        if (last_layer_mask is not None):
-            self.last_layer_mask = last_layer_mask
+        # if (last_layer_mask is not None):
+            # self.last_layer_mask = last_layer_mask
 
         x = self._icnn_mask(x, labels)
 
@@ -175,7 +176,8 @@ class ResNet(nn.Module):
         self.avgpool = nn.AdaptiveAvgPool2d(1) #  nn.AvgPool2d(32)
 
         self.fc = nn.Linear(512 * block.expansion, num_classes)
-        # self._icnn_mask = LearnableMaskLayer(512 * block.expansion, 20)
+        self._icnn_mask = LearnableMaskLayer(512*block.expansion, 20)
+
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
@@ -211,7 +213,6 @@ class ResNet(nn.Module):
 
         x = self.layer1(x)
         # lmask
-        # print(x.shape)
         x = self.layer2(x)
         # lmask
         x = self.layer3(x)
