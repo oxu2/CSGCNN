@@ -41,7 +41,8 @@ class BasicBlock(nn.Module):
         self.bn2 = nn.BatchNorm2d(planes)
         self.downsample = downsample
         self.stride = stride
-        self._icnn_mask = LearnableMaskLayer(planes, 20)
+        # self._icnn_mask = LearnableMaskLayer(planes, 20)
+        self.lmask = LearnableMaskLayer(feature_dim=planes, num_classes=planes)
         # may have to change the shape of mask
         # also check the first layer of resnet 
 
@@ -52,16 +53,19 @@ class BasicBlock(nn.Module):
         out = self.bn1(out)
         out = self.relu(out)
         # lmask, label enumerate part
-        out = self._icnn_mask(out, labels)
+        # out = self._icnn_mask(out, labels)
+        out = self.lmask(out, labels)
         out = self.conv2(out)
         out = self.bn2(out)
-        out = self._icnn_mask(out, labels)
+        # out = self._icnn_mask(out, labels)
+        out = self.lmask(out)
 
         if self.downsample is not None:
             residual = self.downsample(x)
 
         out += residual
         out = self.relu(out)
+        out = self.lmask(out)
 
         return out
 
@@ -82,6 +86,7 @@ class Bottleneck(nn.Module):
         self.downsample = downsample
         self.stride = stride
         # self._icnn_mask = LearnableMaskLayer(planes*4, 20)
+        self.lmask = LearnableMaskLayer
 
     def forward(self, x):
         residual = x
