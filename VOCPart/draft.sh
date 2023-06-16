@@ -16,3 +16,11 @@ nohup python ~/CSGCNN/VOCPart/train/run.py > ./logs/cifar100_0mask_res50_lr-2_lr
 nohup python ~/CSGCNN/VOCPart/train/run.py > ./logs/cifar100_0mask_res50_lr-2_lrreg-3_epoch150.txt &
 
 nohup python ~/CSGCNN/VOCPart/train/run.py > ~/CSGCNN/VOCPart/logs/cifar100_0mask_res152_lr-2_lrreg-3_epoch150.txt &
+
+nohup python ~/CSGCNN/VOCPart/train/run.py > ~/CSGCNN/VOCPart/logs/cifar100_0mask_res50_lr-2_lrreg-3_epoch150_optSGD.txt &
+
+nohup python ~/CSGCNN/VOCPart/train/run.py > ~/CSGCNN/VOCPart/logs/cifar10_0mask_res50_lr-2_lrreg-3_epoch100_optSGD.txt &
+
+nohup python ~/CSGCNN/VOCPart/train/run.py > ~/CSGCNN/VOCPart/logs/cifar10_STD_res50_lr-1_epoch100_optSGD.txt &
+
+nohup python ~/CSGCNN/VOCPart/train/run.py > ~/CSGCNN/VOCPart/logs/cifar100_STD_res50_lr-1_epoch100_optSGD.txt &

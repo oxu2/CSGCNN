@@ -15,7 +15,7 @@ def set_seed(seed=0, cudnn='normal'):
     '''
 
 
-    assert type(seed) == int and seed in range(0,4294967296), "`seed` must be anint in [0,4294967295]"
+    assert type(seed) == int and seed in range(0,4294967296), "`seed` must be an int in [0,4294967295]"
     assert cudnn in [ 'benchmark', 'normal', 'none', 'slow' ], "`cudnn` must be in [ 'benchmark', 'normal', 'slow', 'none' ] "
 
     os.environ['PYTHONHASHSEED'] = str(seed) # seed for hash() function, affects the iteration order of dicts, sets and other mappings, str(seed) int [0; 4294967295]

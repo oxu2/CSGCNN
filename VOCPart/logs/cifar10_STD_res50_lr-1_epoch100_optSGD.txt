@@ -1,0 +1,138 @@
+
+====================================================================================================
+2023-06-16 09:19:54
+oxx220000@csr-93601.utdallas.edu
+
+args
+    name = test_model
+    dataset = cifar-10
+    depth = 50
+    gpu_ids = [3]
+    batch_size = 128
+    epoch = 100
+    exp_dir = /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs128_sgd_lr1e-1_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_cudnn-normal/seed12/CSG/run0
+    ifmask = True
+    optim = sgd
+    lr = 0.1
+    lr_reg = 0.001
+    img_size = 128
+    lambda_reg = 0.001
+    warmup_epochs = 10.0
+    layers_learnable = 5.0
+    layers_learnable_reg = 4.0
+    frozen = False
+    mask_period = 3
+    mask_epoch_min = 2
+    train = True
+    seed = 12
+    cudnn_behavoir = normal
+    load_checkpoint = 
+    use_gpu = True
+
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch   0/100 | train  0m10s Acc:0.1818 Loss:0.0207 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.2618 Loss:0.0159 MaskDens:0.5000 | Best epoch:0   train_acc:0.1818 val_acc:0.2618  
+Epoch   1/100 | train  0m 8s Acc:0.2701 Loss:0.0156 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.3221 Loss:0.0147 MaskDens:0.5000 | Best epoch:1   train_acc:0.2701 val_acc:0.3221  
+Epoch   2/100 | train  0m 8s Acc:0.3070 Loss:0.0148 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.3590 Loss:0.0140 MaskDens:0.5000 | Best epoch:2   train_acc:0.3070 val_acc:0.3590  
+Epoch   3/100 | train  0m 9s Acc:0.3378 Loss:0.0142 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.3764 Loss:0.0136 MaskDens:0.5000 | Best epoch:3   train_acc:0.3378 val_acc:0.3764  
+Epoch   4/100 | train  0m 9s Acc:0.3695 Loss:0.0135 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4086 Loss:0.0129 MaskDens:0.5000 | Best epoch:4   train_acc:0.3695 val_acc:0.4086  
+Epoch   5/100 | train  0m 9s Acc:0.3945 Loss:0.0129 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4398 Loss:0.0124 MaskDens:0.5000 | Best epoch:5   train_acc:0.3945 val_acc:0.4398  
+Epoch   6/100 | train  0m 9s Acc:0.4190 Loss:0.0124 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4415 Loss:0.0120 MaskDens:0.5000 | Best epoch:6   train_acc:0.4190 val_acc:0.4415  
+Epoch   7/100 | train  0m 9s Acc:0.4418 Loss:0.0119 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4794 Loss:0.0112 MaskDens:0.5000 | Best epoch:7   train_acc:0.4418 val_acc:0.4794  
+Epoch   8/100 | train  0m 9s Acc:0.4666 Loss:0.0114 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4900 Loss:0.0112 MaskDens:0.5000 | Best epoch:8   train_acc:0.4666 val_acc:0.4900  
+Epoch   9/100 | train  0m 9s Acc:0.4833 Loss:0.0110 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.4927 Loss:0.0111 MaskDens:0.5000 | Best epoch:9   train_acc:0.4833 val_acc:0.4927  
+Epoch  10/100 | train  0m 9s Acc:0.4973 Loss:0.0107 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.5472 Loss:0.0099 MaskDens:0.5000 | Best epoch:10  train_acc:0.4973 val_acc:0.5472  
+Epoch  11/100 | train  0m15s Acc:0.5324 Loss:0.1380 LMain:0.0101 LossReg:0.1278 |   val  0m16s Acc:0.5597 Loss:0.0096 MaskDens:0.9989 | Best epoch:11  train_acc:0.5324 val_acc:0.5597  
+Epoch  12/100 | train  0m 9s Acc:0.5287 Loss:0.0102 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.5497 Loss:0.0098 MaskDens:0.9989 | Best epoch:11  train_acc:0.5324 val_acc:0.5597  
+Epoch  13/100 | train  0m 9s Acc:0.5443 Loss:0.0098 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.5645 Loss:0.0095 MaskDens:0.9989 | Best epoch:13  train_acc:0.5443 val_acc:0.5645  
+Epoch  14/100 | train  0m15s Acc:0.5812 Loss:0.1370 LMain:0.0091 LossReg:0.1279 |   val  0m16s Acc:0.6072 Loss:0.0087 MaskDens:0.9979 | Best epoch:14  train_acc:0.5812 val_acc:0.6072  
+Epoch  15/100 | train  0m 9s Acc:0.5657 Loss:0.0095 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.5782 Loss:0.0094 MaskDens:0.9979 | Best epoch:14  train_acc:0.5812 val_acc:0.6072  
+Epoch  16/100 | train  0m 9s Acc:0.5799 Loss:0.0092 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.5983 Loss:0.0089 MaskDens:0.9979 | Best epoch:14  train_acc:0.5812 val_acc:0.6072  
+Epoch  17/100 | train  0m15s Acc:0.6123 Loss:0.1361 LMain:0.0084 LossReg:0.1277 |   val  0m16s Acc:0.6350 Loss:0.0081 MaskDens:0.9968 | Best epoch:17  train_acc:0.6123 val_acc:0.6350  
+Epoch  18/100 | train  0m 9s Acc:0.5949 Loss:0.0089 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6298 Loss:0.0081 MaskDens:0.9968 | Best epoch:17  train_acc:0.6123 val_acc:0.6350  
+Epoch  19/100 | train  0m 9s Acc:0.6079 Loss:0.0086 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6273 Loss:0.0083 MaskDens:0.9968 | Best epoch:17  train_acc:0.6123 val_acc:0.6350  
+Epoch  20/100 | train  0m14s Acc:0.6441 Loss:0.1354 LMain:0.0078 LossReg:0.1275 |   val  0m16s Acc:0.6609 Loss:0.0075 MaskDens:0.9958 | Best epoch:20  train_acc:0.6441 val_acc:0.6609  
+Epoch  21/100 | train  0m 9s Acc:0.6159 Loss:0.0084 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6158 Loss:0.0086 MaskDens:0.9958 | Best epoch:20  train_acc:0.6441 val_acc:0.6609  
+Epoch  22/100 | train  0m 9s Acc:0.6296 Loss:0.0081 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6471 Loss:0.0079 MaskDens:0.9958 | Best epoch:20  train_acc:0.6441 val_acc:0.6609  
+Epoch  23/100 | train  0m15s Acc:0.6687 Loss:0.1347 LMain:0.0073 LossReg:0.1274 |   val  0m16s Acc:0.6765 Loss:0.0072 MaskDens:0.9948 | Best epoch:23  train_acc:0.6687 val_acc:0.6765  
+Epoch  24/100 | train  0m 9s Acc:0.6361 Loss:0.0079 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6595 Loss:0.0076 MaskDens:0.9948 | Best epoch:23  train_acc:0.6687 val_acc:0.6765  
+Epoch  25/100 | train  0m 9s Acc:0.6501 Loss:0.0077 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6517 Loss:0.0077 MaskDens:0.9948 | Best epoch:23  train_acc:0.6687 val_acc:0.6765  
+Epoch  26/100 | train  0m15s Acc:0.6844 Loss:0.1341 LMain:0.0069 LossReg:0.1272 |   val  0m16s Acc:0.6934 Loss:0.0069 MaskDens:0.9939 | Best epoch:26  train_acc:0.6844 val_acc:0.6934  
+Epoch  27/100 | train  0m 9s Acc:0.6604 Loss:0.0075 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6591 Loss:0.0075 MaskDens:0.9939 | Best epoch:26  train_acc:0.6844 val_acc:0.6934  
+Epoch  28/100 | train  0m 9s Acc:0.6720 Loss:0.0072 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6768 Loss:0.0073 MaskDens:0.9939 | Best epoch:26  train_acc:0.6844 val_acc:0.6934  
+Epoch  29/100 | train  0m15s Acc:0.7094 Loss:0.1335 LMain:0.0064 LossReg:0.1271 |   val  0m16s Acc:0.7151 Loss:0.0064 MaskDens:0.9929 | Best epoch:29  train_acc:0.7094 val_acc:0.7151  
+Epoch  30/100 | train  0m 9s Acc:0.6783 Loss:0.0071 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6811 Loss:0.0071 MaskDens:0.9929 | Best epoch:29  train_acc:0.7094 val_acc:0.7151  
+Epoch  31/100 | train  0m 9s Acc:0.6894 Loss:0.0068 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.6992 Loss:0.0067 MaskDens:0.9929 | Best epoch:29  train_acc:0.7094 val_acc:0.7151  
+Epoch  32/100 | train  0m15s Acc:0.7309 Loss:0.1329 LMain:0.0060 LossReg:0.1269 |   val  0m16s Acc:0.7375 Loss:0.0060 MaskDens:0.9920 | Best epoch:32  train_acc:0.7309 val_acc:0.7375  
+Epoch  33/100 | train  0m 9s Acc:0.7002 Loss:0.0066 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.7246 Loss:0.0063 MaskDens:0.9920 | Best epoch:32  train_acc:0.7309 val_acc:0.7375  
+Epoch  34/100 | train  0m 9s Acc:0.7095 Loss:0.0064 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.7054 Loss:0.0066 MaskDens:0.9920 | Best epoch:32  train_acc:0.7309 val_acc:0.7375  
+Epoch  35/100 | train  0m15s Acc:0.7465 Loss:0.1324 LMain:0.0056 LossReg:0.1268 |   val  0m16s Acc:0.7511 Loss:0.0056 MaskDens:0.9912 | Best epoch:35  train_acc:0.7465 val_acc:0.7511  
+Epoch  36/100 | train  0m 9s Acc:0.7201 Loss:0.0062 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7211 Loss:0.0063 MaskDens:0.9912 | Best epoch:35  train_acc:0.7465 val_acc:0.7511  
+Epoch  37/100 | train  0m 9s Acc:0.7249 Loss:0.0061 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7274 Loss:0.0063 MaskDens:0.9912 | Best epoch:35  train_acc:0.7465 val_acc:0.7511  
+Epoch  38/100 | train  0m15s Acc:0.7660 Loss:0.1319 LMain:0.0052 LossReg:0.1266 |   val  0m17s Acc:0.7652 Loss:0.0054 MaskDens:0.9903 | Best epoch:38  train_acc:0.7660 val_acc:0.7652  
+Epoch  39/100 | train  0m 9s Acc:0.7305 Loss:0.0060 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7143 Loss:0.0066 MaskDens:0.9903 | Best epoch:38  train_acc:0.7660 val_acc:0.7652  
+Epoch  40/100 | train  0m 9s Acc:0.7361 Loss:0.0059 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7466 Loss:0.0058 MaskDens:0.9903 | Best epoch:38  train_acc:0.7660 val_acc:0.7652  
+Epoch  41/100 | train  0m15s Acc:0.7765 Loss:0.1315 LMain:0.0049 LossReg:0.1265 |   val  0m16s Acc:0.7707 Loss:0.0052 MaskDens:0.9895 | Best epoch:41  train_acc:0.7765 val_acc:0.7707  
+Epoch  42/100 | train  0m 9s Acc:0.7429 Loss:0.0057 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7591 Loss:0.0055 MaskDens:0.9895 | Best epoch:41  train_acc:0.7765 val_acc:0.7707  
+Epoch  43/100 | train  0m 9s Acc:0.7491 Loss:0.0056 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7408 Loss:0.0059 MaskDens:0.9895 | Best epoch:41  train_acc:0.7765 val_acc:0.7707  
+Epoch  44/100 | train  0m15s Acc:0.7860 Loss:0.1311 LMain:0.0047 LossReg:0.1264 |   val  0m16s Acc:0.7741 Loss:0.0051 MaskDens:0.9888 | Best epoch:44  train_acc:0.7860 val_acc:0.7741  
+Epoch  45/100 | train  0m 9s Acc:0.7543 Loss:0.0054 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7398 Loss:0.0059 MaskDens:0.9888 | Best epoch:44  train_acc:0.7860 val_acc:0.7741  
+Epoch  46/100 | train  0m 9s Acc:0.7588 Loss:0.0053 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.7548 Loss:0.0057 MaskDens:0.9888 | Best epoch:44  train_acc:0.7860 val_acc:0.7741  
+Epoch  47/100 | train  0m15s Acc:0.7960 Loss:0.1308 LMain:0.0045 LossReg:0.1263 |   val  0m17s Acc:0.7843 Loss:0.0049 MaskDens:0.9880 | Best epoch:47  train_acc:0.7960 val_acc:0.7843  
+Epoch  48/100 | train  0m 9s Acc:0.7665 Loss:0.0052 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7541 Loss:0.0056 MaskDens:0.9880 | Best epoch:47  train_acc:0.7960 val_acc:0.7843  
+Epoch  49/100 | train  0m 9s Acc:0.7667 Loss:0.0052 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7516 Loss:0.0057 MaskDens:0.9880 | Best epoch:47  train_acc:0.7960 val_acc:0.7843  
+Epoch  50/100 | train  0m15s Acc:0.8055 Loss:0.1305 LMain:0.0043 LossReg:0.1261 |   val  0m16s Acc:0.7901 Loss:0.0048 MaskDens:0.9872 | Best epoch:50  train_acc:0.8055 val_acc:0.7901  
+Epoch  51/100 | train  0m 9s Acc:0.7695 Loss:0.0051 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7623 Loss:0.0056 MaskDens:0.9872 | Best epoch:50  train_acc:0.8055 val_acc:0.7901  
+Epoch  52/100 | train  0m 9s Acc:0.7746 Loss:0.0050 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7545 Loss:0.0056 MaskDens:0.9872 | Best epoch:50  train_acc:0.8055 val_acc:0.7901  
+Epoch  53/100 | train  0m15s Acc:0.8107 Loss:0.1303 LMain:0.0042 LossReg:0.1260 |   val  0m16s Acc:0.7958 Loss:0.0047 MaskDens:0.9865 | Best epoch:53  train_acc:0.8107 val_acc:0.7958  
+Epoch  54/100 | train  0m 9s Acc:0.7773 Loss:0.0049 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.7695 Loss:0.0053 MaskDens:0.9865 | Best epoch:53  train_acc:0.8107 val_acc:0.7958  
+Epoch  55/100 | train  0m 9s Acc:0.8201 Loss:0.0040 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8133 Loss:0.0043 MaskDens:0.9865 | Best epoch:55  train_acc:0.8201 val_acc:0.8133  
+Epoch  56/100 | train  0m15s Acc:0.8467 Loss:0.1293 LMain:0.0034 LossReg:0.1259 |   val  0m16s Acc:0.8146 Loss:0.0043 MaskDens:0.9859 | Best epoch:56  train_acc:0.8467 val_acc:0.8146  
+Epoch  57/100 | train  0m 9s Acc:0.8349 Loss:0.0036 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8177 Loss:0.0042 MaskDens:0.9859 | Best epoch:57  train_acc:0.8467 val_acc:0.8177  
+Epoch  58/100 | train  0m 9s Acc:0.8431 Loss:0.0035 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8196 Loss:0.0042 MaskDens:0.9859 | Best epoch:58  train_acc:0.8467 val_acc:0.8196  
+Epoch  59/100 | train  0m15s Acc:0.8590 Loss:0.1289 LMain:0.0031 LossReg:0.1258 |   val  0m16s Acc:0.8223 Loss:0.0041 MaskDens:0.9852 | Best epoch:59  train_acc:0.8590 val_acc:0.8223  
+Epoch  60/100 | train  0m 9s Acc:0.8448 Loss:0.0034 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8195 Loss:0.0042 MaskDens:0.9852 | Best epoch:59  train_acc:0.8590 val_acc:0.8223  
+Epoch  61/100 | train  0m 9s Acc:0.8499 Loss:0.0033 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8194 Loss:0.0041 MaskDens:0.9852 | Best epoch:59  train_acc:0.8590 val_acc:0.8223  
+Epoch  62/100 | train  0m15s Acc:0.8682 Loss:0.1286 LMain:0.0029 LossReg:0.1257 |   val  0m16s Acc:0.8236 Loss:0.0041 MaskDens:0.9845 | Best epoch:62  train_acc:0.8682 val_acc:0.8236  
+Epoch  63/100 | train  0m 9s Acc:0.8520 Loss:0.0033 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8212 Loss:0.0041 MaskDens:0.9845 | Best epoch:62  train_acc:0.8682 val_acc:0.8236  
+Epoch  64/100 | train  0m 9s Acc:0.8544 Loss:0.0032 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8216 Loss:0.0041 MaskDens:0.9845 | Best epoch:62  train_acc:0.8682 val_acc:0.8236  
+Epoch  65/100 | train  0m15s Acc:0.8768 Loss:0.1284 LMain:0.0028 LossReg:0.1256 |   val  0m16s Acc:0.8251 Loss:0.0041 MaskDens:0.9838 | Best epoch:65  train_acc:0.8768 val_acc:0.8251  
+Epoch  66/100 | train  0m 9s Acc:0.8576 Loss:0.0031 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8229 Loss:0.0041 MaskDens:0.9838 | Best epoch:65  train_acc:0.8768 val_acc:0.8251  
+Epoch  67/100 | train  0m 9s Acc:0.8601 Loss:0.0031 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8255 Loss:0.0041 MaskDens:0.9838 | Best epoch:67  train_acc:0.8768 val_acc:0.8255  
+Epoch  68/100 | train  0m15s Acc:0.8825 Loss:0.1281 LMain:0.0026 LossReg:0.1255 |   val  0m16s Acc:0.8285 Loss:0.0040 MaskDens:0.9831 | Best epoch:68  train_acc:0.8825 val_acc:0.8285  
+Epoch  69/100 | train  0m 9s Acc:0.8629 Loss:0.0030 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8244 Loss:0.0041 MaskDens:0.9831 | Best epoch:68  train_acc:0.8825 val_acc:0.8285  
+Epoch  70/100 | train  0m 9s Acc:0.8648 Loss:0.0030 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8276 Loss:0.0041 MaskDens:0.9831 | Best epoch:68  train_acc:0.8825 val_acc:0.8285  
+Epoch  71/100 | train  0m15s Acc:0.8881 Loss:0.1279 LMain:0.0025 LossReg:0.1254 |   val  0m16s Acc:0.8309 Loss:0.0040 MaskDens:0.9825 | Best epoch:71  train_acc:0.8881 val_acc:0.8309  
+Epoch  72/100 | train  0m 9s Acc:0.8650 Loss:0.0030 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8268 Loss:0.0041 MaskDens:0.9825 | Best epoch:71  train_acc:0.8881 val_acc:0.8309  
+Epoch  73/100 | train  0m 9s Acc:0.8686 Loss:0.0029 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8262 Loss:0.0041 MaskDens:0.9825 | Best epoch:71  train_acc:0.8881 val_acc:0.8309  
+Epoch  74/100 | train  0m15s Acc:0.8930 Loss:0.1277 LMain:0.0024 LossReg:0.1253 |   val  0m16s Acc:0.8305 Loss:0.0040 MaskDens:0.9818 | Best epoch:71  train_acc:0.8930 val_acc:0.8309  
+Epoch  75/100 | train  0m 9s Acc:0.8711 Loss:0.0028 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8257 Loss:0.0041 MaskDens:0.9818 | Best epoch:71  train_acc:0.8930 val_acc:0.8309  
+Epoch  76/100 | train  0m 9s Acc:0.8731 Loss:0.0028 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8264 Loss:0.0041 MaskDens:0.9818 | Best epoch:71  train_acc:0.8930 val_acc:0.8309  
+Epoch  77/100 | train  0m15s Acc:0.8983 Loss:0.1274 LMain:0.0023 LossReg:0.1251 |   val  0m16s Acc:0.8299 Loss:0.0040 MaskDens:0.9811 | Best epoch:71  train_acc:0.8983 val_acc:0.8309  
+Epoch  78/100 | train  0m 9s Acc:0.8747 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8272 Loss:0.0042 MaskDens:0.9811 | Best epoch:71  train_acc:0.8983 val_acc:0.8309  
+Epoch  79/100 | train  0m 9s Acc:0.8761 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8299 Loss:0.0041 MaskDens:0.9811 | Best epoch:71  train_acc:0.8983 val_acc:0.8309  
+Epoch  80/100 | train  0m15s Acc:0.9027 Loss:0.1272 LMain:0.0022 LossReg:0.1250 |   val  0m17s Acc:0.8335 Loss:0.0040 MaskDens:0.9804 | Best epoch:80  train_acc:0.9027 val_acc:0.8335  
+Epoch  81/100 | train  0m 9s Acc:0.8782 Loss:0.0027 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8281 Loss:0.0042 MaskDens:0.9804 | Best epoch:80  train_acc:0.9027 val_acc:0.8335  
+Epoch  82/100 | train  0m 9s Acc:0.8797 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8285 Loss:0.0042 MaskDens:0.9804 | Best epoch:80  train_acc:0.9027 val_acc:0.8335  
+Epoch  83/100 | train  0m15s Acc:0.9094 Loss:0.1270 LMain:0.0021 LossReg:0.1249 |   val  0m16s Acc:0.8323 Loss:0.0041 MaskDens:0.9797 | Best epoch:80  train_acc:0.9094 val_acc:0.8335  
+Epoch  84/100 | train  0m 9s Acc:0.8814 Loss:0.0026 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8289 Loss:0.0042 MaskDens:0.9797 | Best epoch:80  train_acc:0.9094 val_acc:0.8335  
+Epoch  85/100 | train  0m 9s Acc:0.8917 Loss:0.0024 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8333 Loss:0.0040 MaskDens:0.9797 | Best epoch:80  train_acc:0.9094 val_acc:0.8335  
+Epoch  86/100 | train  0m15s Acc:0.9155 Loss:0.1268 LMain:0.0019 LossReg:0.1248 |   val  0m16s Acc:0.8327 Loss:0.0041 MaskDens:0.9790 | Best epoch:80  train_acc:0.9155 val_acc:0.8335  
+Epoch  87/100 | train  0m 9s Acc:0.8960 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8337 Loss:0.0041 MaskDens:0.9790 | Best epoch:87  train_acc:0.9155 val_acc:0.8337  
+Epoch  88/100 | train  0m10s Acc:0.8962 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8347 Loss:0.0040 MaskDens:0.9790 | Best epoch:88  train_acc:0.9155 val_acc:0.8347  
+Epoch  89/100 | train  0m15s Acc:0.9219 Loss:0.1265 LMain:0.0018 LossReg:0.1247 |   val  0m16s Acc:0.8342 Loss:0.0041 MaskDens:0.9783 | Best epoch:88  train_acc:0.9219 val_acc:0.8347  
+Epoch  90/100 | train  0m 9s Acc:0.8968 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8339 Loss:0.0041 MaskDens:0.9783 | Best epoch:88  train_acc:0.9219 val_acc:0.8347  
+Epoch  91/100 | train  0m10s Acc:0.8964 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8331 Loss:0.0041 MaskDens:0.9783 | Best epoch:88  train_acc:0.9219 val_acc:0.8347  
+Epoch  92/100 | train  0m16s Acc:0.9246 Loss:0.1263 LMain:0.0017 LossReg:0.1246 |   val  0m17s Acc:0.8319 Loss:0.0041 MaskDens:0.9776 | Best epoch:88  train_acc:0.9246 val_acc:0.8347  
+Epoch  93/100 | train  0m10s Acc:0.8975 Loss:0.0023 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8334 Loss:0.0041 MaskDens:0.9776 | Best epoch:88  train_acc:0.9246 val_acc:0.8347  
+Epoch  94/100 | train  0m 9s Acc:0.8988 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8335 Loss:0.0041 MaskDens:0.9776 | Best epoch:88  train_acc:0.9246 val_acc:0.8347  
+Epoch  95/100 | train  0m15s Acc:0.9287 Loss:0.1261 LMain:0.0017 LossReg:0.1245 |   val  0m16s Acc:0.8325 Loss:0.0042 MaskDens:0.9769 | Best epoch:88  train_acc:0.9287 val_acc:0.8347  
+Epoch  96/100 | train  0m 9s Acc:0.8986 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8341 Loss:0.0041 MaskDens:0.9769 | Best epoch:88  train_acc:0.9287 val_acc:0.8347  
+Epoch  97/100 | train  0m10s Acc:0.9009 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  0m11s Acc:0.8339 Loss:0.0041 MaskDens:0.9769 | Best epoch:88  train_acc:0.9287 val_acc:0.8347  
+Epoch  98/100 | train  0m14s Acc:0.9326 Loss:0.1260 LMain:0.0016 LossReg:0.1244 |   val  0m16s Acc:0.8317 Loss:0.0042 MaskDens:0.9762 | Best epoch:88  train_acc:0.9326 val_acc:0.8347  
+Epoch  99/100 | train  0m 9s Acc:0.9010 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8322 Loss:0.0042 MaskDens:0.9762 | Best epoch:88  train_acc:0.9326 val_acc:0.8347  
+Epoch 100/100 | train  0m 9s Acc:0.9011 Loss:0.0022 LMain:0.0000 LossReg:0.0000 |   val  0m10s Acc:0.8343 Loss:0.0041 MaskDens:0.9762 | Best epoch:88  train_acc:0.9326 val_acc:0.8347  
+Training complete in 0h21m26s
+model name:  run0
+
+python3 /people/cs/o/oxx220000/CSGCNN/VOCPart/train/train.py --dataset cifar-10 --depth 50 --ifmask True --gpu-ids 3 --optim sgd --batch_size 128 --epoch 100 --exp_dir /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs128_sgd_lr1e-1_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_cudnn-normal/seed12/CSG/run0 --lr 1e-1 --img_size 128 --lambda_reg 1e-3 --warmup_epochs 10 --mask_period 3 --mask_epoch_min 2 --layers_learnable 5 --layers_learnable_reg 4 --frozen False --lr_reg 1e-3 --train True --seed 12 --cudnn_behavoir normal --load_checkpoint '' | tee -a /people/cs/o/oxx220000/CSGCNN/VOCPart/train/../__result__/CIFAR100_128x128_pretrained/res50_bs128_sgd_lr1e-1_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_cudnn-normal/seed12/CSG/run0/log

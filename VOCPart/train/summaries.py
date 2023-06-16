@@ -9,4 +9,5 @@ class TensorboardSummary(object):
 
     def create_summary(self):
         writer = SummaryWriter(log_dir=os.path.join(self.directory))
+        # writer.add_graph(net, images)
         return writer

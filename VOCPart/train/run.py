@@ -1,26 +1,26 @@
 # -------------------------------------------------------------
 # experiment settings:
 
-gpu_ids = '3'
-ifmask = 0
+gpu_ids = '2'
+ifmask = True
 train = True
 
 # -------------------------------------------------------------
 # hyper-parameters:
-seed = 12
+seed = 13
 repeat_times = 1 # how much times repeat it
-cudnn_behavoir = 'slow' # 'benchmark' 'normal' 'slow' 'none'
+cudnn_behavoir = 'normal' # 'benchmark' 'normal' 'slow' 'none'
 
 # model and dataset
 # datasets = ['mnist']
 datasets = ['cifar-100']
 img_size = 128
-depth = 152
-batchsize = 32
+depth = 50
+batchsize = 128
 
-epoch = 150
-optim = 'adam'
-lr = '1e-2' # finetune resnet152: 1e-5
+epoch = 100
+optim = 'sgd'
+lr = '1e-1' # finetune resnet152: 1e-5
 lr_reg = '1e-3'
 lambda_reg = '1e-3' # reg. coef.
 warmup_epochs = 10
