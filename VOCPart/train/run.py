@@ -52,17 +52,17 @@ frozen = False
 import os, subprocess
 here = os.path.dirname(os.path.realpath(__file__))  # get absoltae path to the dir this file is in
 
-exp_dir_root = os.path.join(here, '..', '__result__', f'CIFAR100_{img_size}x{img_size}_pretrained' )
+exp_dir_root = os.path.join(here, '..', '__result__', f'{datasets}_{img_size}x{img_size}_pretrained' )
 
 if train:
     load_checkpoint = ''
 else:
     if ifmask:
-        load_checkpoint = os.path.join(here, '..', '__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/checkpoints/epoch_150.pt')
-        # load_checkpoint = os.path.join(here, '..', 'checkpoints', 'CSG.pt')
+        # load_checkpoint = os.path.join(here, '..', '__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/CSG/run0/checkpoints/epoch_150.pt')
+        load_checkpoint = os.path.join(here, '..', 'checkpoints', 'CSG.pt')
     else:
-        load_checkpoint = os.path.join(here, '..', '__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/STD/run0/checkpoints/epoch_150.pt')
-        # load_checkpoint = os.path.join(here, '..', 'checkpoints', 'STD.pt')
+        # load_checkpoint = os.path.join(here, '..', '__result__/VOCPart_128x128_pretrained/res152_bs32_adam_lr1e-5_lrreg1e-3_lmd1e-3_warm10_mask-epoch_mod3geq2_learnable-final-STD5-CSG4-layers_cudnn-slow/seed12/STD/run0/checkpoints/epoch_150.pt')
+        load_checkpoint = os.path.join(here, '..', 'checkpoints', 'STD.pt')
 
 os.environ["CUDA_VISIBLE_DEVICES"] = gpu_ids
 

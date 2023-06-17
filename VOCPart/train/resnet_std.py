@@ -54,11 +54,12 @@ class BasicBlock(nn.Module):
         out = self.relu(out)
         # lmask, label enumerate part
         # out = self._icnn_mask(out, labels)
-        out = self.lmask(out, labels)
+        # out = self.lmask(out, labels)
         out = self.conv2(out)
         out = self.bn2(out)
         # out = self._icnn_mask(out, labels)
-        out = self.lmask(out)
+        # out = self.lmask(out)
+        # out, reg = self.lmask(out, labels)
 
         if self.downsample is not None:
             residual = self.downsample(x)
@@ -86,7 +87,7 @@ class Bottleneck(nn.Module):
         self.downsample = downsample
         self.stride = stride
         # self._icnn_mask = LearnableMaskLayer(planes*4, 20)
-        self.lmask = LearnableMaskLayer
+        self.lmask = LearnableMaskLayer(feature_dim=planes*4, num_classes=planes*4)
 
     def forward(self, x):
         residual = x
@@ -156,8 +157,8 @@ class LearnableMaskLayer(nn.Module):
         self.mask.data = lmask
 
     def forward(self, x, labels, last_layer_mask=None):
-        if (last_layer_mask is not None):
-            self.last_layer_mask = last_layer_mask
+        # if (last_layer_mask is not None):
+            # self.last_layer_mask = last_layer_mask
 
         x = self._icnn_mask(x, labels)
 
@@ -181,6 +182,7 @@ class ResNet(nn.Module):
 
         self.fc = nn.Linear(512 * block.expansion, num_classes)
         # self._icnn_mask = LearnableMaskLayer(512 * block.expansion, 20)
+        self.lmask = LearnableMaskLayer(feature_dim=512* block.expansion, num_classes=num_classes)
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
@@ -215,6 +217,7 @@ class ResNet(nn.Module):
         x = self.maxpool(x)
 
         x = self.layer1(x)
+        x, reg = self.lmask(x, labels)
         # lmask
         # print(x.shape)
         x = self.layer2(x)

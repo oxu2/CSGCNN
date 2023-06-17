@@ -41,9 +41,6 @@ class BasicBlock(nn.Module):
         self.bn2 = nn.BatchNorm2d(planes)
         self.downsample = downsample
         self.stride = stride
-        self._icnn_mask = LearnableMaskLayer(planes, 20)
-        # may have to change the shape of mask
-        # also check the first layer of resnet 
 
     def forward(self, x):
         residual = x
@@ -51,11 +48,9 @@ class BasicBlock(nn.Module):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
-        # lmask, label enumerate part
-        out = self._icnn_mask(out, labels)
+
         out = self.conv2(out)
         out = self.bn2(out)
-        out = self._icnn_mask(out, labels)
 
         if self.downsample is not None:
             residual = self.downsample(x)
@@ -81,7 +76,6 @@ class Bottleneck(nn.Module):
         self.relu = nn.ReLU(inplace=True)
         self.downsample = downsample
         self.stride = stride
-        self._icnn_mask = LearnableMaskLayer(planes*4, 20)
 
     def forward(self, x):
         residual = x
@@ -89,11 +83,11 @@ class Bottleneck(nn.Module):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
-        out = self._icnn_mask(out, labels)
+
         out = self.conv2(out)
         out = self.bn2(out)
         out = self.relu(out)
-        out = self._icnn_mask(out, labels)
+
         out = self.conv3(out)
         out = self.bn3(out)
 
@@ -102,16 +96,13 @@ class Bottleneck(nn.Module):
 
         out += residual
         out = self.relu(out)
-        out = self._icnn_mask(out, labels)
 
         return out
 
 class LearnableMaskLayer(nn.Module):
-    # K*C, K is the number of filters and C is the number of classes
     def __init__(self, feature_dim, num_classes):
         super(LearnableMaskLayer, self).__init__()
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
-        # torch.full returns a tensor of size (feature_dim, num_classes) filled with the scalar value 0.5
         self.mask = torch.nn.Parameter(torch.full((feature_dim,num_classes),0.5))
 
     def get_channel_mask(self):
@@ -120,16 +111,11 @@ class LearnableMaskLayer(nn.Module):
 
     def get_density(self):
         return torch.norm(self.mask, p=1)/torch.numel(self.mask)
-        # norm with p=1, 1-norm
-        # numel: number of elements, e.g. 1*16*32*32 for (1,16,32,32) feature map
 
     def _icnn_mask(self, x, labels):
         if self.training:
             index_mask = torch.zeros(x.shape, device=x.device)
-            # idx represents the index of the label in the labels list, and la represents the label
             for idx, la in enumerate(labels):
-                # self.mask[:, la] is a column from the self.mask tensor corresponding to the label la.
-                # view funciton reshapes the selected column to match the shape of index_mask[idx, :, :, :]
                 index_mask[idx, :, :, :] = self.mask[:, la].view(-1, self.mask.shape[0], 1, 1)
             return index_mask * x
         else:
@@ -137,23 +123,19 @@ class LearnableMaskLayer(nn.Module):
 
     def loss_function(self):
         l1_reg = torch.norm(self.mask, p=1)
-        # mu = 0.2?
-        # 
         l1_reg = torch.relu(l1_reg - torch.numel(self.mask) * 0.2)
         return l1_reg
 
-    def clip_lmask(self): # Clip the mask to [0,1]
+    def clip_lmask(self):
 
         lmask = self.mask
-        # normalizes the mask parameter 
         lmask = lmask / torch.max(lmask, dim=1)[0].view(-1, 1)
-        # clips the values of the mask parameter to be between 0 and 1
         lmask = torch.clamp(lmask, min=0, max=1)
         self.mask.data = lmask
 
     def forward(self, x, labels, last_layer_mask=None):
-        # if (last_layer_mask is not None):
-            # self.last_layer_mask = last_layer_mask
+        if (last_layer_mask is not None):
+            self.last_layer_mask = last_layer_mask
 
         x = self._icnn_mask(x, labels)
 
@@ -176,7 +158,6 @@ class ResNet(nn.Module):
         self.avgpool = nn.AdaptiveAvgPool2d(1) #  nn.AvgPool2d(32)
 
         self.fc = nn.Linear(512 * block.expansion, num_classes)
-        self._icnn_mask = LearnableMaskLayer(512*block.expansion, 20)
 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
@@ -205,21 +186,16 @@ class ResNet(nn.Module):
 
     def forward(self, x, labels=None):
         x = self.conv1(x)
-        
         x = self.bn1(x)
-        
         x = self.relu(x)
         x = self.maxpool(x)
 
         x = self.layer1(x)
-        # lmask
         x = self.layer2(x)
-        # lmask
         x = self.layer3(x)
-        # lmask
         x = self.layer4(x)
 
-        # here is about the last layer, layer4
+
         if labels is not None:
             x, reg = self.lmask(x, labels)
 
